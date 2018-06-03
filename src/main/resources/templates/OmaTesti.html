@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Listaa automerkkejä</title>
+</head>
+
+<body>
+<h1>Hei, listaa tähän automerkkejä</h1>
+
+<form method="POST" action="/autot">
+    Merkki:<br/>
+    <input type="text" name="nimi"/><br/>
+    <input type="submit" value="Lisää merkki"/>
+</form>
+
+
+<h3>Tässä listaa listatuista merkeistä</h3>
+<ul>
+    <li th:each="arvo: ${lista}">
+        <span th:text="${arvo}">1</span>
+
+
+    </li>
+</ul>
+
+
+
+
+
+</body>
+</html>
