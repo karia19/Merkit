@@ -22,7 +22,7 @@ public class Main {
         if (System.getenv("PORT") != null) {
             Spark.port(Integer.valueOf(System.getenv("PORT")));
         }
-        System.out.println("Hello");
+        System.out.println("*");
 
 
         Spark.get("/autot", (Request reg, Response res)-> {
@@ -48,7 +48,7 @@ public class Main {
 
         }, new ThymeleafTemplateEngine());
 
-        Spark.post("/autot",(reg, res)->{
+        Spark.post("*",(reg, res)->{
             Connection connection = DriverManager.getConnection("jdbc:sqlite:autot.db");
             PreparedStatement stm = connection.prepareStatement("INSERT INTO Merkit (malli) VALUES (?)");
             stm.setString(1, reg.queryParams("nimi"));
